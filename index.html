@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Islamic Google — Gateway to Islamic Knowledge</title>
+  <meta name="description" content="Your premium Islamic search engine. Search Qur'an, Hadith, lectures, books and authentic Islamic resources. Daily Ayah, Dhikr counter and prayer times."/>
+  <meta property="og:title" content="Islamic Google — Gateway to Islamic Knowledge"/>
+  <meta property="og:description" content="Premium Islamic search engine — Qur'an, Hadith, Lectures, Books, Daily Ayah & Dhikr Counter."/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#0a6a4a"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="splash-moon">🌙</div>
+  <div class="splash-title">Islamic Google</div>
+  <div class="splash-sub">بسم الله الرحمن الرحيم</div>
+  <div class="splash-bar"><div class="splash-fill"></div></div>
+</div>
+
+<div id="toasts"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-logo">🕌</div>
+      <div class="brand-text">
+        <h1>Islamic Google</h1>
+        <p>Gateway to Islamic Knowledge</p>
+      </div>
+    </a>
+    <div class="header-search">
+      <input type="text" id="header-search-input" placeholder="Search Qur'an, Hadith, lectures…" />
+      <button class="srch-btn" onclick="triggerSearch()"><i class="fas fa-search"></i></button>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="quran.html">Qur'an</a>
+      <a href="hadith.html">Hadith</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="books.html">Books</a>
+      <a href="history.html">History</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="quran.html">📖 Qur'an</a>
+    <a href="hadith.html">📚 Hadith</a>
+    <a href="lectures.html">🎤 Lectures</a>
+    <a href="books.html">📕 Books</a>
+    <a href="history.html">📜 History</a>
+    <a href="contact.html">✉️ Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <h2>🔍 Islamic Google</h2>
+  <p>Your complete gateway to authentic Islamic knowledge. Search Qur'an, Hadith, lectures and trusted resources.</p>
+  <div class="hero-search">
+    <input type="text" id="hero-search-input" placeholder="Search Islamic knowledge…" />
+    <button onclick="triggerSearch()">Search 🔍</button>
+  </div>
+  <div class="hero-stats">
+    <div class="hs-item"><div class="hs-num">6,000+</div><div class="hs-label">Qur'an Verses</div></div>
+    <div class="hs-item"><div class="hs-num">50K+</div><div class="hs-label">Hadiths</div></div>
+    <div class="hs-item"><div class="hs-num">500+</div><div class="hs-label">Lectures</div></div>
+    <div class="hs-item"><div class="hs-num">8+</div><div class="hs-label">Scholars</div></div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="page-main">
+
+  <!-- DAILY REMINDER BANNER -->
+  <div class="reminder-banner" id="reminder-banner">
+    <div class="rb-icon">🔔</div>
+    <div class="rb-text">
+      <h4>Enable Daily Islamic Reminders</h4>
+      <p>Receive a daily Ayah, Hadith and prayer time reminder on your device.</p>
+    </div>
+    <button class="rb-btn" onclick="requestNotifications()">Enable Now</button>
+  </div>
+
+  <!-- DAILY AYAH -->
+  <div class="daily-ayah">
+    <div class="da-label">🌟 Verse of the Day</div>
+    <div class="da-arabic" id="da-arabic">وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ</div>
+    <div class="da-english" id="da-english">"And whoever relies upon Allah — then He is sufficient for him."</div>
+    <div class="da-ref" id="da-ref">Qur'an 65:3</div>
+    <button class="da-next" onclick="nextAyah()">Next Verse ›</button>
+  </div>
+
+  <!-- STATS -->
+  <div class="section-title"><h2>📊 Portal Statistics</h2><div class="stline"></div></div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-num">6,236</div><div class="stat-label">Qur'an Verses</div></div>
+    <div class="stat-card"><div class="stat-icon">📚</div><div class="stat-num">50,000+</div><div class="stat-label">Hadith</div></div>
+    <div class="stat-card"><div class="stat-icon">🎤</div><div class="stat-num">500+</div><div class="stat-label">Video Lectures</div></div>
+    <div class="stat-card"><div class="stat-icon">🌍</div><div class="stat-num">180+</div><div class="stat-label">Countries Reached</div></div>
+  </div>
+
+  <!-- HOW TO USE GUIDE -->
+  <div class="guide-section">
+    <div class="section-title"><h2>🤖 How to Use Islamic Google</h2><div class="stline"></div></div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="gs-num">1</div>
+        <div class="gs-icon">🔍</div>
+        <div class="gs-title">Search Anything</div>
+        <div class="gs-desc">Type any Islamic topic, surah name, scholar name or keyword in the search bar above.</div>
+      </div>
+      <div class="guide-step">
+        <div class="gs-num">2</div>
+        <div class="gs-icon">📂</div>
+        <div class="gs-title">Filter by Category</div>
+        <div class="gs-desc">Use the category buttons to filter results by Qur'an, Hadith, Lectures, Books or History.</div>
+      </div>
+      <div class="guide-step">
+        <div class="gs-num">3</div>
+        <div class="gs-icon">📖</div>
+        <div class="gs-title">Access Resources</div>
+        <div class="gs-desc">Click any result to open the full authentic resource from trusted Islamic platforms.</div>
+      </div>
+      <div class="guide-step">
+        <div class="gs-num">4</div>
+        <div class="gs-icon">📿</div>
+        <div class="gs-title">Do Your Dhikr</div>
+        <div class="gs-desc">Use the Dhikr counter below to count your Subhanallah, Alhamdulillah and Allahu Akbar.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH SECTION -->
+  <div class="search-section" id="search-section">
+    <div class="section-title"><h2>🔎 Search Results</h2><div class="stline"></div></div>
+    <div class="search-filters">
+      <button class="sf-btn active" onclick="filterCat('all',this)">All</button>
+      <button class="sf-btn" onclick="filterCat('Qur\'an',this)">📖 Qur'an</button>
+      <button class="sf-btn" onclick="filterCat('Hadith',this)">📚 Hadith</button>
+      <button class="sf-btn" onclick="filterCat('Lecture',this)">🎤 Lectures</button>
+      <button class="sf-btn" onclick="filterCat('Book',this)">📕 Books</button>
+      <button class="sf-btn" onclick="filterCat('History',this)">📜 History</button>
+    </div>
+    <div id="results-container">
+      <div class="no-results">
+        <div class="nr-icon">🔍</div>
+        <p>Type a keyword or select a category to explore Islamic resources.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HADITH OF THE DAY -->
+  <div class="hadith-of-day">
+    <div class="hod-label">📿 Hadith of the Day</div>
+    <div class="hod-text" id="hod-text">"The best of you are those who learn the Qur'an and teach it."</div>
+    <div class="hod-source" id="hod-source">— Sahih al-Bukhari 5027</div>
+    <button class="hod-next" onclick="nextHadith()">Next Hadith ›</button>
+  </div>
+
+  <!-- DHIKR COUNTER -->
+  <div class="dhikr-section">
+    <div class="section-title"><h2>📿 Dhikr Counter — التسبيح</h2><div class="stline"></div></div>
+    <div class="dhikr-tabs">
+      <button class="dtab active" onclick="setDhikr(this,'subhanallah')">Subhanallah</button>
+      <button class="dtab" onclick="setDhikr(this,'alhamdulillah')">Alhamdulillah</button>
+      <button class="dtab" onclick="setDhikr(this,'allahuakbar')">Allahu Akbar</button>
+      <button class="dtab" onclick="setDhikr(this,'astaghfirullah')">Astaghfirullah</button>
+      <button class="dtab" onclick="setDhikr(this,'lailahaillallah')">La ilaha illallah</button>
+    </div>
+    <div class="dhikr-display">
+      <div class="dhikr-arabic" id="dhikr-arabic">سُبْحَانَ اللَّهِ</div>
+      <div class="dhikr-meaning" id="dhikr-meaning">Glory be to Allah</div>
+      <div class="dhikr-target" id="dhikr-target">Target: 33 times</div>
+      <div class="dhikr-count" id="dhikr-count">0</div>
+      <div>
+        <button class="dhikr-btn" onclick="countDhikr()">+</button>
+        <button class="dhikr-reset" onclick="resetDhikr()">Reset</button>
+      </div>
+      <div class="dhikr-progress">
+        <div class="dp-bar"><div class="dp-fill" id="dp-fill" style="width:0%"></div></div>
+        <div class="dp-text" id="dp-text">0 / 33</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="section-title"><h2>⚡ Quick Access</h2><div class="stline"></div></div>
+  <div class="quick-links">
+    <a href="https://quran.com" target="_blank" class="ql-card">
+      <div class="ql-icon">📖</div><div class="ql-name">Quran.com</div><div class="ql-sub">Read & Listen</div>
+    </a>
+    <a href="https://sunnah.com" target="_blank" class="ql-card">
+      <div class="ql-icon">📚</div><div class="ql-name">Sunnah.com</div><div class="ql-sub">Hadith Collections</div>
+    </a>
+    <a href="https://islamqa.info" target="_blank" class="ql-card">
+      <div class="ql-icon">❓</div><div class="ql-name">IslamQA</div><div class="ql-sub">Fatwa & Questions</div>
+    </a>
+    <a href="https://yaqeeninstitute.org" target="_blank" class="ql-card">
+      <div class="ql-icon">🔬</div><div class="ql-name">Yaqeen</div><div class="ql-sub">Research Institute</div>
+    </a>
+    <a href="https://muslimpro.com" target="_blank" class="ql-card">
+      <div class="ql-icon">🕐</div><div class="ql-name">Muslim Pro</div><div class="ql-sub">Prayer Times</div>
+    </a>
+    <a href="https://islamicfinder.org" target="_blank" class="ql-card">
+      <div class="ql-icon">📍</div><div class="ql-name">Islamic Finder</div><div class="ql-sub">Mosques & Qibla</div>
+    </a>
+    <a href="https://productivemuslim.com" target="_blank" class="ql-card">
+      <div class="ql-icon">⚡</div><div class="ql-name">Productive Muslim</div><div class="ql-sub">Lifestyle & Growth</div>
+    </a>
+    <a href="https://islamicstudies.info" target="_blank" class="ql-card">
+      <div class="ql-icon">🎓</div><div class="ql-name">Islamic Studies</div><div class="ql-sub">Learning Platform</div>
+    </a>
+  </div>
+
+  <!-- FEATURED SCHOLARS -->
+  <div class="section-title"><h2>📺 Featured Scholars</h2><div class="stline"></div></div>
+  <div class="scholars-grid">
+    <div class="scholar-card">
+      <div class="sc-avatar">🎤</div>
+      <div class="sc-name">Mufti Menk</div>
+      <div class="sc-desc">Zimbabwean Islamic scholar known for practical and relatable Islamic guidance for everyday life.</div>
+      <a href="https://www.youtube.com/@muftimenk" target="_blank" class="sc-link">Watch Lectures</a>
+    </div>
+    <div class="scholar-card">
+      <div class="sc-avatar">🎤</div>
+      <div class="sc-name">Omar Suleiman</div>
+      <div class="sc-desc">Founder of Yaqeen Institute. Known for deep Qur'anic reflections and Islamic history series.</div>
+      <a href="https://www.youtube.com/@OmarSuleimanOfficial" target="_blank" class="sc-link">Watch Lectures</a>
+    </div>
+    <div class="scholar-card">
+      <div class="sc-avatar">🎤</div>
+      <div class="sc-name">Nouman Ali Khan</div>
+      <div class="sc-desc">Founder of Bayyinah Institute. World's leading Qur'anic Arabic teacher and speaker.</div>
+      <a href="https://www.youtube.com/@bayyinah" target="_blank" class="sc-link">Watch Lectures</a>
+    </div>
+    <div class="scholar-card">
+      <div class="sc-avatar">🎤</div>
+      <div class="sc-name">Yasir Qadhi</div>
+      <div class="sc-desc">Islamic scholar and theologian specializing in Islamic theology, history and contemporary issues.</div>
+      <a href="https://www.youtube.com/@YasirQadhi" target="_blank" class="sc-link">Watch Lectures</a>
+    </div>
+    <div class="scholar-card">
+      <div class="sc-avatar">📚</div>
+      <div class="sc-name">Yaqeen Institute</div>
+      <div class="sc-desc">Research institute dedicated to Islamic scholarship, academic publications and video content.</div>
+      <a href="https://yaqeeninstitute.org" target="_blank" class="sc-link">Visit Site</a>
+    </div>
+    <div class="scholar-card">
+      <div class="sc-avatar">🎥</div>
+      <div class="sc-name">IslamicHub TV</div>
+      <div class="sc-desc">A curated Islamic media platform featuring lectures, documentaries and educational content.</div>
+      <a href="https://www.youtube.com/@IslamicHubTV" target="_blank" class="sc-link">Watch Now</a>
+    </div>
+  </div>
+
+  <!-- VIDEO LECTURES -->
+  <div class="section-title"><h2>🎬 Featured Lectures</h2><div class="stline"></div></div>
+  <div class="video-section-grid">
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/m9xcwWBwXkc?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-card-info">
+        <h4>Mufti Menk — Spiritual Reminder</h4>
+        <a href="https://www.youtube.com/watch?v=m9xcwWBwXkc" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/_7WjdRTCv6I?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-card-info">
+        <h4>Nouman Ali Khan — Understanding Qur'an</h4>
+        <a href="https://www.youtube.com/watch?v=_7WjdRTCv6I" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/1UJk3GXyQK0?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-card-info">
+        <h4>Omar Suleiman — Mercy of the Prophet</h4>
+        <a href="https://www.youtube.com/watch?v=1UJk3GXyQK0" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/1Ev5wfKnAsM?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-card-info">
+        <h4>Yasir Qadhi — Purpose of Life</h4>
+        <a href="https://www.youtube.com/watch?v=1Ev5wfKnAsM" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/q6q6dAKRhP0?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-card-info">
+        <h4>Powerful Qur'an Recitation</h4>
+        <a href="https://www.youtube.com/watch?v=q6q6dAKRhP0" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/Qk2mhKRF3XY?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe>
+      <div class="video-card-info">
+        <h4>Beautiful Adhan — Call to Prayer</h4>
+        <a href="https://www.youtube.com/watch?v=Qk2mhKRF3XY" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-arabic">جَزَاكَ اللَّهُ خَيْرًا</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="quran.html">Qur'an</a>
+    <a href="hadith.html">Hadith</a>
+    <a href="lectures.html">Lectures</a>
+    <a href="books.html">Books</a>
+    <a href="history.html">History</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+  <p>✨ Created by <strong>Suleiman Alhassan</strong> — May Allah accept this as Sadaqah Jariyah 🤲</p>
+</footer>
+
+<script src="search.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Islamic Google — Gateway to Islamic Knowledge",
+  "short_name": "Islamic Google",
+  "description": "Premium Islamic search engine — Qur'an, Hadith, Lectures, Books, Daily Ayah & Dhikr Counter",
+  "start_url": "/ISLAMIC-GOOGEL/index.html",
+  "display": "standalone",
+  "background_color": "#064d35",
+  "theme_color": "#0a6a4a",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "https://img.icons8.com/emoji/192/mosque-emoji.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "https://img.icons8.com/emoji/512/mosque-emoji.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
